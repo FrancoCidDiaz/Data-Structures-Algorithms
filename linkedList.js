@@ -160,9 +160,28 @@ class LinkedList {
    }
 
    clear(){
+    this.length = 0
     this.head = null
- 
+    this.tail = null
    }
+
+
+   reverse(){
+
+    let temp = this.head
+    this.head = this.tail
+    this.tail = temp
+    let next = temp
+    let prev = null
+    
+    for(let i = 0; i < this.length; i++){
+      next = temp.next
+      temp.next = prev
+      prev = next
+      temp = next
+    }
+    
+  }
 
 }
 
@@ -190,6 +209,8 @@ console.log("Despues del set", myLinkedList)
 myLinkedList.insert(1,44)
 console.log("Despues del insert:", myLinkedList)
 console.log("Size:", myLinkedList.size())
-myLinkedList.clear()
-console.log("Clear:", myLinkedList)
+//myLinkedList.clear()
+//console.log("Clear:", myLinkedList)
+myLinkedList.reverse()
+console.log("Despues de reverse:", myLinkedList)
 
