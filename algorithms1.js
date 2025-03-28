@@ -191,6 +191,24 @@ const correctTwoSum = (nums, target) => {
   return []
 }
 
+const countDown = (number) => {
+  if(number === 0){
+    console.log("finalmente llegamos al punto")
+    return 
+  }
+  console.log(number)
+  countDown(number-1)
+
+}
+
+
+const recursionFactorial = (number) => {
+ 
+  if(number === 0){
+    return 1
+  }
+  return number * recursionFactorial(number - 1)
+}
 
 
 
@@ -218,4 +236,6 @@ console.log("STACK REVERSE STRING:")
 console.log(stackReverseString("probando la funcion"))
 console.log(wordCounter("Este es el contador de palabras contador"))
 console.log(correctTwoSum([2,7,11,15], 22))
-
+console.log(countDown(6))
+console.log("RECURSION FACTORIAL")
+console.log(recursionFactorial(5))
